@@ -31,6 +31,9 @@ setup(name='medialog.dexterityview',
       install_requires=[
           'plone.dexterity',
           'medialog.controlpanel',
+          'collective.z3cform.datagridfield',
+          'plone.api',
+          'plone.directives.form',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

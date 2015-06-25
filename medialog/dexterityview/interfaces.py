@@ -41,7 +41,7 @@ class IDexterityViewSettings(form.Schema):
             ],
     )
     
-    form.widget(content_pair=DataGridFieldFactory)
+    form.widget(content_pairs=DataGridFieldFactory)
     content_pairs = schema.List(
         title = _(u"content_pairs", 
             default=u"Content type and fields blocked"),
