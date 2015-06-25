@@ -43,7 +43,7 @@
   <browser:menuItems
     for="plone.dexterity.interfaces.IDexterityContent"
     menu="plone_displayviews">
-  <browser:menuItem
+     <browser:menuItem
       title="Generic View"
       action="dexterity_view"
       />
