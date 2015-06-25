@@ -41,7 +41,7 @@
    <!-- MENU ITEMS -->
 
   <browser:menuItems
-    for="zope.location.interfaces.IContained"
+    for="plone.dexterity.interfaces.IDexterityContent"
     menu="plone_displayviews">
   <browser:menuItem
       title="Generic View"
