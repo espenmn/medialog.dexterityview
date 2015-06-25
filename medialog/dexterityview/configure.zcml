@@ -8,7 +8,7 @@
     xmlns:z3c="http://namespaces.zope.org/z3c"
     i18n_domain="medialog.dexterityview">
     
- 
+  <include package="plone.app.z3cform" />
   <include package="plone.app.contentmenu" />
     
   <genericsetup:registerProfile
