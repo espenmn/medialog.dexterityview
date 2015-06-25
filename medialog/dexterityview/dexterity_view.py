@@ -5,6 +5,8 @@ from zope.schema import getFields
 from plone.dexterity.interfaces import IDexterityContent
 from plone.dexterity.browser.view import DefaultView
 
+from plone import api
+from medialog.dexterityview.interfaces import IDexterityViewSettings
  
 class IDexterityView(Interface):
     """
@@ -21,9 +23,14 @@ class DexterityView(DefaultView, BrowserView):
     """
     Customizable browser view
     """
+    
+    
     @property
     def block_fields(self):
-        return self.request.get('block_fields', ('IBasic.title', 'IBasic.description', 'title', 'description'))
+        block_fields = self.request.get('block_fields', None)
+        if not block_fields:
+            return api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings.content_pairs')
+        return ('IBasic.title', 'IBasic.description', 'title', 'description')
     
     @property
     def render_fields(self):

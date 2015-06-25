@@ -30,6 +30,7 @@ setup(name='medialog.dexterityview',
       zip_safe=False,
       install_requires=[
           'plone.dexterity',
+          'medialog.controlpanel',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
