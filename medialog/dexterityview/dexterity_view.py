@@ -31,9 +31,11 @@ class DexterityView(DefaultView, BrowserView):
         if not block_fields:
             content_type = self.context.portal_type
             block_pairs = api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings.content_pairs')
-            for pair in block_pairs:
-                if pair['content_type'] == content_type:
-                    return pair['block_fields']
+            if block_pairs:
+                for pair in block_pairs:
+                    if pair['content_type'] == content_type:
+                        if pair['block_fields'] != None:
+                            return pair['block_fields']
         return ('IBasic.title', 'IBasic.description', 'title', 'description')
     
     @property
