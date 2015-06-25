@@ -1,0 +1,12 @@
+
+*.pyc
+
+medialog.dexterityview.egg-info/dependency_links.txt
+
+medialog.dexterityview.egg-info/entry_points.txt
+
+medialog.dexterityview.egg-info/requires.txt
+
+medialog.dexterityview.egg-info/top_level.txt
+
+medialog.dexterityview.egg-info

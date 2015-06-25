@@ -1,0 +1,54 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="medialog.dexterityview">
+    
+ 
+  <five:registerPackage package="." initialize=".initialize" />
+    <include package="plone.app.contentmenu" />
+    
+  <genericsetup:registerProfile
+      name="default"
+      title="medialog.dexterityview"
+      directory="profiles/default"
+      description="Dexterity Generic Browser View"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+
+  <browser:page
+      for="IDexterityViewLayer"
+      name="dexterity_view"
+      class="browser.dexterity_view.DexterityView"
+      template="templates/dexterity_view.pt"
+      permission="zope.Public"
+      />
+      
+    <browser:page
+      name="d_widget"
+      for="z3c.form.interfaces.IWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      class="plone.app.z3cform.templates.RenderWidget"
+      template="templates/d_widget.pt"
+      permission="zope.Public"
+      />
+ 
+ 
+   <!-- MENU ITEMS -->
+
+  <browser:menuItems
+    for="zope.location.interfaces.IContained"
+    menu="plone_displayviews">
+  <browser:menuItem
+      title="Generic View"
+      action="dexterity_view"
+      />
+ 
+  </browser:menuItems>
+ 
+
+</configure>
