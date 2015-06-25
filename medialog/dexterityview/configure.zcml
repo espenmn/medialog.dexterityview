@@ -21,9 +21,9 @@
 
 
   <browser:page
-      for="IDexterityViewLayer"
+      for="*"
       name="dexterity_view"
-      class="dexterity_view.DexterityView"
+      class="medialog.dexterityview.dexterity_view.DexterityView"
       template="dexterity_view.pt"
       permission="zope.Public"
       />

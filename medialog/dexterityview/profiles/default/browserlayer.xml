@@ -1,6 +1,0 @@
-<layers>
-    <layer
-        name="dexterity_view_layer"
-        interface="IDexterityViewLayer"
-        />
-</layers>
