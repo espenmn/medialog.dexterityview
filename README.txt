@@ -11,6 +11,7 @@ Control panel settings
 ======================
 You can set which fields to block in the control panel for each content type
 
+
 Manual rendering
 ================
 For special needs (like theming) could can also do:
