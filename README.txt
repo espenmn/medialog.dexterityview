@@ -2,8 +2,13 @@ medialog.dexterityview
 =======================
 
 A generic view for dexterity content.
-Use it like this:
 
+Short demo:
+===========
+https://www.youtube.com/watch?v=iHBWkrPTuLw
+
+Use it like this:
+=================
 http://site/content/@@dexterity_view
 
 
