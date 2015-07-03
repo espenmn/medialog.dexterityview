@@ -10,3 +10,5 @@ medialog.dexterityview.egg-info/requires.txt
 medialog.dexterityview.egg-info/top_level.txt
 
 medialog.dexterityview.egg-info
+
+*.gz
