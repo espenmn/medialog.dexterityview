@@ -7,14 +7,10 @@ from plone.directives import form
 from plone.autoform.interfaces import IFormFieldProvider
 from medialog.controlpanel.interfaces import IMedialogControlpanelSettingsProvider
 
-from plone.formwidget.namedfile.widget import INamedImageWidget, NamedImageWidget
-
 from collective.z3cform.datagridfield import DataGridFieldFactory 
 from collective.z3cform.datagridfield.registry import DictRow
 
-
-from plone.formwidget.namedfile.widget import NamedImageWidget
-
+ 
 
 from zope.i18nmessageid import MessageFactory
 
@@ -24,20 +20,6 @@ _ = MessageFactory('medialog.dexterityview')
 class IDexterityViewLayer(Interface):
     """A layer specific to medialog.dexterityview
         """
-
-
-
-
-class DexterityNamedImageWidget(NamedImageWidget):
-    """A widget for a named image field that can be set to scales
-    """
-                
-    @property
-    def image_scale(self):
-        return  'preview'
-
-
-
 
 class IContentPair(form.Schema):
     content_type = schema.ASCIILine(
@@ -56,9 +38,10 @@ class IDexterityViewSettings(form.Schema):
         """
     form.fieldset(
         'dexterity_view',
-        label=_(u'Sexterity View'),
+        label=_(u'Dexterity View'),
             fields=[
                     'content_pairs',
+                    'image_scale',
             ],
     )
     
@@ -68,6 +51,12 @@ class IDexterityViewSettings(form.Schema):
             default=u"Content type and fields blocked"),
         value_type=DictRow(schema=IContentPair),
     )
+    
+    image_scale = schema.ASCIILine(
+        title=_(u'image_scale', 'Image Scale'),
+        required=True
+    )
+
                 
 alsoProvides(IDexterityViewSettings, IMedialogControlpanelSettingsProvider)
 

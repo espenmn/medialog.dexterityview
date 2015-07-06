@@ -18,12 +18,12 @@ class IDexterityView(Interface):
 
     def  render_fields():
         """ Returns fields to render"""
+        
 
 class DexterityView(DefaultView, BrowserView):
     """
     Customizable browser view
     """
-    
     
     @property
     def block_fields(self):
@@ -41,6 +41,21 @@ class DexterityView(DefaultView, BrowserView):
     @property
     def render_fields(self):
         return  self.request.get('render_fields', '')
+        
     
 
+class IImageScale(Interface):
+    """
+    return image scale
+    """
+
+    
+
+class ImageScale(BrowserView):
+    """
+    Helper view
+    """
+    
+    def __call__(self):
+    	return  api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings.image_scale')
     

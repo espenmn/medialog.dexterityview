@@ -20,11 +20,10 @@
                          filename view/filename;
                          filename_encoded view/filename_encoded;
                          scales context/@@images;
-                         scaled_image python: scales.scale('image', 'preview')"
+                         image_scale context/@@image_scale;
+                         scaled_image python: scales.scale(fieldname, image_scale)"
      					 tal:attributes="src scaled_image/url;
      					 alt view/alt;
      					 title view/title"
-     					 />
-     					 
-     				 
+     					 />	 
 </span>

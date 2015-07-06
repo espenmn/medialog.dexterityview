@@ -4,6 +4,7 @@
   
   <records interface="medialog.dexterityview.interfaces.IDexterityViewSettings">
       <value key="content_pairs"></value>
+      <value key="image_scale">preview</value>
   </records>
 
 </registry>
