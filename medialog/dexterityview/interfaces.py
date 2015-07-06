@@ -26,16 +26,20 @@ class IContentPair(form.Schema):
         title=_(u'content_type', 'Content type'), 
         required=False
     )
+        
+    image_scale = schema.Choice(
+        title=_(u"imagesize", default=u"image Size"),
+        vocabulary = 'medialog.dexterityview.ImageSizeVocabulary',
+        required = True,
+        description=_(u"help_imagesize",
+            default=u"Set  size for image")
+    )
     
     block_fields = schema.ASCIILine(
         title=_(u'block_fields', 'Fields to block'),
         required=False
     )
     
-    image_scale = schema.ASCIILine(
-        title=_(u'image_scale', 'Image Scale'),
-        required=True
-    )
 
 
 class IDexterityViewSettings(form.Schema):

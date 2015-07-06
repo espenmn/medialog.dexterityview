@@ -52,6 +52,11 @@
         layer="medialog.dexterityview.interfaces.IDexterityViewLayer"
         template="dexterity_image_display.pt"
         />
+        
+   <utility
+    component=".vocabulary.ImageSizeVocabulary"
+    name="medialog.dexterityview.ImageSizeVocabulary" />
+
  
   <browser:menuItems
     for="plone.dexterity.interfaces.IDexterityContent"
