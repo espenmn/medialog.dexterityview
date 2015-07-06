@@ -42,3 +42,5 @@ class DexterityView(DefaultView, BrowserView):
     def render_fields(self):
         return  self.request.get('render_fields', '')
     
+
+    

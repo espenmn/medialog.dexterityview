@@ -19,7 +19,6 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-
   <browser:page
       for="*"
       name="dexterity_view"
@@ -40,11 +39,12 @@
  
     <z3c:widgetTemplate
         mode="display"
-        widget="plone.formwidget.namedfile.interfaces.INamedImageWidget"
+        widget=".interfaces.INamedImageWidget"
         layer="medialog.dexterityview.interfaces.IDexterityViewLayer"
         template="dexterity_image_display.pt"
         />
  
+
    <!-- MENU ITEMS -->
 
   <browser:menuItems
