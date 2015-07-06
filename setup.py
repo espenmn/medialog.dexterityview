@@ -34,6 +34,7 @@ setup(name='medialog.dexterityview',
           'collective.z3cform.datagridfield',
           'plone.api',
           'plone.directives.form',
+          'plone.formwidget.namedfile'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

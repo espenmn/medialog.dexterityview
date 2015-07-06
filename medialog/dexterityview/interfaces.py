@@ -1,10 +1,13 @@
 from zope import schema
 from zope.interface import Interface
 from z3c.form import interfaces
+from z3c.form.interfaces import IFileWidget
 from zope.interface import alsoProvides
 from plone.directives import form
 from plone.autoform.interfaces import IFormFieldProvider
 from medialog.controlpanel.interfaces import IMedialogControlpanelSettingsProvider
+
+from plone.formwidget.namedfile.widget import INamedImageWidget
 
 from collective.z3cform.datagridfield import DataGridFieldFactory 
 from collective.z3cform.datagridfield.registry import DictRow
@@ -17,6 +20,14 @@ _ = MessageFactory('medialog.dexterityview')
 class IDexterityViewLayer(Interface):
     """A layer specific to medialog.dexterityview
         """
+
+class IDexterityNamedImageWidget(INamedImageWidget):
+    """A widget for a named image field that can be set to scales
+    """
+
+    def image_scale(self):
+        return 'thumb'
+
 
 class IContentPair(form.Schema):
     content_type = schema.ASCIILine(
@@ -49,3 +60,5 @@ class IDexterityViewSettings(form.Schema):
     )
                 
 alsoProvides(IDexterityViewSettings, IMedialogControlpanelSettingsProvider)
+
+

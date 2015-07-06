@@ -13,18 +13,18 @@
     			render_fields view/render_fields">
 
     <tal:block repeat="widget view/widgets/values">
-    	<tal:widget tal:replace="structure widget/@@d_widget"
+    	<tal:widget tal:replace="structure widget/@@dexterity_widget"
             		tal:condition="python:widget.label not in block_fields and not render_fields" />
-        <tal:widget tal:replace="structure widget/@@d_widget"
+        <tal:widget tal:replace="structure widget/@@dexterity_widget"
             		tal:condition="python:widget.label in render_fields" />
     </tal:block>
 
     <fieldset tal:repeat="group view/groups"
               tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')"> 
         <tal:block tal:repeat="widget group/widgets/values">
-            <tal:widget tal:replace="structure widget/@@d_widget"
+            <tal:widget tal:replace="structure widget/@@dexterity_widget"
             	tal:condition="python:widget.label not in block_fields and not render_fields" />
-            <tal:widget tal:replace="structure widget/@@d_widget"
+            <tal:widget tal:replace="structure widget/@@dexterity_widget"
             		tal:condition="python:widget.label in render_fields" />
         </tal:block>
     </fieldset>
