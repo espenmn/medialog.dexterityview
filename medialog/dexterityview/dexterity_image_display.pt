@@ -24,6 +24,6 @@
                          scaled_image python: scales.scale(fieldname, dexterity_image_scale);"
      					 tal:condition="scaled_image"
      					 tal:attributes="src scaled_image;
-     					 	alt view/alt"
+     					 alt view/alt"
      					 />
 </span>
