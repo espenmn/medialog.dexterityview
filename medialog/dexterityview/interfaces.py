@@ -46,7 +46,6 @@ class IDexterityViewSettings(form.Schema):
         label=_(u'Dexterity View'),
             fields=[
                     'content_pairs',
-                    'image_scale',
             ],
     )
     

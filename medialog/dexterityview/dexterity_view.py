@@ -42,23 +42,16 @@ class DexterityView(DefaultView, BrowserView):
     def render_fields(self):
         return  self.request.get('render_fields', '')
         
-    
 
-class IImageScale(Interface):
-    """
-    return image scale
-    """
-
-    
 
 class ImageScale(BrowserView):
     """
-    Helper view
+    Helper view for the widget. Must be a better way to do this.
     """
     
     def __call__(self):
         content_type = self.context.portal_type
-        content_pairs = api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings,content_pairs')
+        content_pairs = api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings.content_pairs')
         for pair in content_pairs:
                     if pair['content_type'] == content_type:
                         if pair['image_scale'] != None:
