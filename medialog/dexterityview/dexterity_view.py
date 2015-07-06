@@ -57,5 +57,11 @@ class ImageScale(BrowserView):
     """
     
     def __call__(self):
-    	return  api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings.image_scale')
-    
+        content_type = self.context.portal_type
+        content_pairs = api.portal.get_registry_record('medialog.dexterityview.interfaces.IDexterityViewSettings,content_pairs')
+        for pair in content_pairs:
+                    if pair['content_type'] == content_type:
+                        if pair['image_scale'] != None:
+                            return pair['image_scale']
+                            
+        return 'preview'    

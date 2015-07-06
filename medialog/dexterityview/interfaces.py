@@ -31,6 +31,11 @@ class IContentPair(form.Schema):
         title=_(u'block_fields', 'Fields to block'),
         required=False
     )
+    
+    image_scale = schema.ASCIILine(
+        title=_(u'image_scale', 'Image Scale'),
+        required=True
+    )
 
 
 class IDexterityViewSettings(form.Schema):
@@ -52,11 +57,6 @@ class IDexterityViewSettings(form.Schema):
         value_type=DictRow(schema=IContentPair),
     )
     
-    image_scale = schema.ASCIILine(
-        title=_(u'image_scale', 'Image Scale'),
-        required=True
-    )
-
                 
 alsoProvides(IDexterityViewSettings, IMedialogControlpanelSettingsProvider)
 
