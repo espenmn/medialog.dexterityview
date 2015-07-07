@@ -5,7 +5,7 @@ A generic view for dexterity content.
 
 Short demo:
 ===========
-https://www.youtube.com/watch?v=iHBWkrPTuLw
+https://www.youtube.com/watch?v=pOsv9FKyqoQ 
 
 Use it like this:
 =================
