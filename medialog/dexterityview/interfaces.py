@@ -61,5 +61,3 @@ class IDexterityViewSettings(form.Schema):
     
                 
 alsoProvides(IDexterityViewSettings, IMedialogControlpanelSettingsProvider)
-
-

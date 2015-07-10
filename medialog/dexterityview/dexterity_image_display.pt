@@ -14,10 +14,25 @@
                       onkeypress view/onkeypress;
                       onkeydown view/onkeydown;
                       onkeyup view/onkeyup"
-        tal:define="value view/value;
-                    exists python:value is not None;">
-                     
-         <!--img tal:define="fieldname view/field/__name__ | nothing;
+        			  tal:define="value view/value;
+                      exists python:value is not None;">
+                    
+
+     	                        
+         <!-- img tal:define="fieldname view/field/__name__ | nothing;
+                         filename view/filename;
+                         filename_encoded view/filename_encoded;
+                         scales view/@@photos_url;
+                         image_scale view/@@image_scale;
+                         scaled_image python: scales.scale(fieldname, image_scale)"
+     					 tal:attributes="src scaled_image/url;
+     					 alt view/alt;
+     					 title view/title"
+     					 /-->	 
+
+
+                        
+         <img tal:define="fieldname view/field/__name__ | nothing;
                          filename view/filename;
                          filename_encoded view/filename_encoded;
                          scales context/@@images;
@@ -26,17 +41,8 @@
      					 tal:attributes="src scaled_image/url;
      					 alt view/alt;
      					 title view/title"
-     					 /-->	 
+     					 />	 
      					 
-     		 
-     					 <!-- img src="http://localhost:8080/DexterityView/mytrying/@@images/image"/ -->
-     					 
-        <!-- img tal:define="fieldname view/field/__name__ | nothing;
-                         filename view/filename;
-                         filename_encoded view/filename_encoded;
-                         alt view/alt"
-             tal:condition="python:exists and fieldname"
-             tal:attributes="src view/download_url;
-                             alt view/alt"
-            /-->
+
+
 </span>

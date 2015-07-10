@@ -37,6 +37,15 @@
       permission="zope.Public"
       />
 
+   <!-- Helper view to get the contents URL... need a better way to do this -->
+  <browser:page
+      for="*"
+      name="photos_url"
+      class="medialog.dexterityview.dexterity_view.PhotosURL"
+      layer="medialog.dexterityview.interfaces.IDexterityViewLayer"
+      permission="zope.Public"
+      />
+
     <browser:page
       name="dexterity_widget"
       for="z3c.form.interfaces.IWidget"

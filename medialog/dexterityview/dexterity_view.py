@@ -7,7 +7,8 @@ from plone.dexterity.browser.view import DefaultView
 
 from plone import api
 from medialog.dexterityview.interfaces import IDexterityViewSettings
- 
+
+
 class IDexterityView(Interface):
     """
     view interface
@@ -56,5 +57,18 @@ class ImageScale(BrowserView):
                     if pair['content_type'] == content_type:
                         if pair['image_scale'] != None:
                             return pair['image_scale']
-                            
-        return 'preview'    
+
+        
+        
+        
+class PhotosURL(BrowserView):
+    """
+    Helper view for the widget. Must be a better way to do this.
+    """
+    
+    def __call__(self):
+        import pdb; pdb.set_trace()
+        try:
+            return "%s/++widget++/@@images" % (self.request.getURL())
+        finally:
+            pass
