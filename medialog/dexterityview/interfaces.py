@@ -10,7 +10,6 @@ from medialog.controlpanel.interfaces import IMedialogControlpanelSettingsProvid
 from collective.z3cform.datagridfield import DataGridFieldFactory 
 from collective.z3cform.datagridfield.registry import DictRow
 
- 
 
 from zope.i18nmessageid import MessageFactory
 
@@ -22,7 +21,7 @@ class IDexterityViewLayer(Interface):
         """
 
 class IContentPair(form.Schema):
-    content_type = schema.ASCIILine(
+    content_type = schema.TextLine(
         title=_(u'content_type', 'Content type'), 
         required=False
     )
@@ -35,7 +34,7 @@ class IContentPair(form.Schema):
             default=u"Set  size for image")
     )
     
-    block_fields = schema.ASCIILine(
+    block_fields = schema.TextLine(
         title=_(u'block_fields', 'Fields to block'),
         required=False
     )
