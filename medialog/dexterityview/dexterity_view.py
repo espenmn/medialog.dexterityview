@@ -1,4 +1,5 @@
-from zope.interface import implements, Interface, Attribute
+from zope.interface import implements, Interface
+#, Attribute
 from Products.Five import BrowserView
 from plone.dexterity.utils import iterSchemata
 from zope.schema import getFields
@@ -37,7 +38,7 @@ class DexterityView(DefaultView, BrowserView):
                     if pair['content_type'] == content_type:
                         if pair['block_fields'] != None:
                             return pair['block_fields']
-        return ('IBasic.title', 'IBasic.description', 'title', 'description')
+        return ('IBasic.title',  'IBasic.description', 'title', 'description')
     
     @property
     def render_fields(self):
@@ -57,18 +58,6 @@ class ImageScale(BrowserView):
                     if pair['content_type'] == content_type:
                         if pair['image_scale'] != None:
                             return pair['image_scale']
+        return 'preview'
 
         
-        
-        
-class PhotosURL(BrowserView):
-    """
-    Helper view for the widget. Must be a better way to do this.
-    """
-    
-    def __call__(self):
-        import pdb; pdb.set_trace()
-        try:
-            return "%s/++widget++/@@images" % (self.request.getURL())
-        finally:
-            pass
