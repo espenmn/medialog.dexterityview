@@ -14,6 +14,6 @@
                    id string:formfield-${widget/id};">
 
     	<input type="text" tal:replace="structure widget/render"
-           metal:define-slot="widget" />
+           metal:define-slot="widget"  />
  
 </div>
