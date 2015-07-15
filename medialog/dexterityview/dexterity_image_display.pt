@@ -16,7 +16,7 @@
                       onkeyup view/onkeyup"
         			  tal:define="value view/value;
                       exists python:value is not None;"
-                      tal:condition="exists: context/@@image_scale"	 >	 
+                      tal:condition="exists: context/@@image_scale">	 
                     
 	<img tal:define="fieldname view/field/__name__ | nothing;
                      filename view/filename;
@@ -27,7 +27,7 @@
   					 tal:attributes="src scaled_image/url;
      				 alt view/alt;
      				 title view/title"
-     				 tal:condition="exists"	 />	 
+     				 tal:condition="exists" />	 
      					 
  	 
 </span>
