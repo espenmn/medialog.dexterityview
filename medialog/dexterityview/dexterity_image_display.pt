@@ -28,10 +28,8 @@
      				 alt view/alt;
      				 title view/title"
      				 tal:condition="exists" />	 
-     					 
+     				
  	 
 </span>
 
 
-
- 

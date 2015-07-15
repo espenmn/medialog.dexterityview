@@ -18,7 +18,6 @@
         <tal:widget tal:replace="structure widget/@@dexterity_widget"
             		tal:condition="python:widget.label in render_fields" />
     </tal:block>
- 
 
   </metal:content-core>
 </metal:main>
