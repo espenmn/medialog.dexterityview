@@ -18,7 +18,7 @@
         <tal:widget tal:replace="structure widget/@@dexterity_widget"
             		tal:condition="python:widget.label in render_fields" />
     </tal:block>
-
+<!--div tal:repeat="pair context/image_pairs"><div tal:content="pair/image_title"/></div-->
   </metal:content-core>
 </metal:main>
 
