@@ -15,10 +15,11 @@
                       onkeydown view/onkeydown;
                       onkeyup view/onkeyup"
         			  tal:define="value view/value;
-                      exists python:value is not None;"
-                      tal:condition="exists: context/@@image_scale">	 
+                      exists python:value is not None;">
+    
+    <tal:image tal:condition="exists: context/@@images">	 
                     
-	<img tal:define="fieldname view/field/__name__ | nothing;
+	    <img tal:define="fieldname view/field/__name__ | nothing;
                      filename view/filename;
                      filename_encoded view/filename_encoded;
                      scales context/@@images;
@@ -28,8 +29,20 @@
      				 alt view/alt;
      				 title view/title"
      				 tal:condition="exists" />	 
-     				
- 	 
+     </tal:image>
+     
+     <!-- use this for datagrid fields etc -->
+      <img tal:define="fieldname view/field/__name__ | nothing;
+                         filename view/filename;
+                         filename_encoded view/filename_encoded;
+                         width view/width;
+                         height view/height;
+                         alt view/alt"
+             tal:condition="python:exists and fieldname"
+             tal:attributes="src view/download_url;
+                             height view/height;
+                             width view/width;
+                             alt view/alt"
+    />
+ 
 </span>
-
-

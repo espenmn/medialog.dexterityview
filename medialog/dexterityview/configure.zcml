@@ -49,7 +49,7 @@
  
     <z3c:widgetTemplate
         mode="display"
-        widget="medialog.dexterityview.interfaces.INamedImageWidget"
+        widget="plone.formwidget.namedfile.widget.INamedImageWidget"
         layer="medialog.dexterityview.interfaces.IDexterityViewLayer"
         template="dexterity_image_display.pt"
         />

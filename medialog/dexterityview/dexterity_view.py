@@ -44,11 +44,6 @@ class DexterityView(DefaultView, BrowserView):
     def render_fields(self):
         return  self.request.get('render_fields', '')
         
-    @property
-    def get_url(self):
-        return  'some_url'
-
-
 class ImageScale(BrowserView):
     """
     Helper view for the widget. Must be a better way to do this.
@@ -69,25 +64,3 @@ class ImageScale(BrowserView):
                             return pair['image_scale']
         return 'preview'
 
-
-
-
-from Products.Five.browser.metaconfigure import ViewMixinForTemplates
-from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
-
-import os.path
-import plone.app.z3cform
-import plone.app.z3cform.interfaces
-import plone.z3cform.interfaces
-import plone.z3cform.templates
-import z3c.form.interfaces
-
-
-# The widget rendering templates need to be Zope 3 templates
-class DRenderWidget(ViewMixinForTemplates, BrowserView):
-    
-    import pdb; pdb.set_trace()
-    print 'hallo'
-    @property
-    def something(self):
-        return 'ost'

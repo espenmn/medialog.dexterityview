@@ -13,6 +13,9 @@
                    data-fieldname widget/name;
                    id string:formfield-${widget/id};">
 
-    	<input type="text" tal:replace="structure widget/render"
-           metal:define-slot="widget"  />
+    	<input type="text" 
+    		tal:replace="structure widget/render"
+            metal:define-slot="widget"  />
+   
+   
 </div>
