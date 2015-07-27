@@ -42,7 +42,6 @@
              tal:attributes="src view/download_url;
                              height view/height;
                              width view/width;
-                             alt view/alt"
-    />
+                             alt view/alt" />
  
 </span>

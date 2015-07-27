@@ -16,6 +16,4 @@
     	<input type="text" 
     		tal:replace="structure widget/render"
             metal:define-slot="widget"  />
-   
-   
 </div>
