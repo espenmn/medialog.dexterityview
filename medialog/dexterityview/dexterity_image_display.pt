@@ -3,6 +3,7 @@
                       class view/klass;
                       style view/style;
                       title view/title;
+                      image_scale view/@@image_scale;
                       lang view/lang;
                       onclick view/onclick;
                       ondblclick view/ondblclick;
@@ -17,31 +18,17 @@
         			  tal:define="value view/value;
                       exists python:value is not None;">
     
-    <tal:image tal:condition="exists: context/@@images">	 
+    <tal:image>
+    <tal:check tal:define="ost python: view.request.PARENTS[0]"
+    		tal:condition="exists: context/@@images">	 
                     
-	    <img tal:define="fieldname view/field/__name__ | nothing;
-                     filename view/filename;
-                     filename_encoded view/filename_encoded;
-                     scales context/@@images;
-                     image_scale context/@@image_scale;
-                     scaled_image python: scales.scale(fieldname, image_scale)" 
-  					 tal:attributes="src scaled_image/url;
-     				 alt view/alt;
-     				 title view/title"
-     				 tal:condition="exists" />	 
-     </tal:image>
-     
-     <!-- use this for datagrid fields etc -->
-      <img tal:define="fieldname view/field/__name__ | nothing;
-                         filename view/filename;
-                         filename_encoded view/filename_encoded;
-                         width view/width;
-                         height view/height;
-                         alt view/alt"
-             tal:condition="python:exists and fieldname"
-             tal:attributes="src view/download_url;
-                             height view/height;
-                             width view/width;
-                             alt view/alt" />
+            <div tal:content="context/the_parent"   />
+ 
+      </tal:check>
+      </tal:image>
+
+ 
  
 </span>
+
+      <div tal:content="context/the_parent"   />

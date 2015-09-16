@@ -16,4 +16,7 @@
     	<input type="text" 
     		tal:replace="structure widget/render"
             metal:define-slot="widget"  />
+123
+      <div tal:content="context/view/my_parent" tal:condition="exists: context/view/my_parent">xxx</div>
+
 </div>
